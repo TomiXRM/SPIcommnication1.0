@@ -11,15 +11,13 @@
 SPI spi(PC_12, PC_11, PC_10); // mosi, miso, sclk
 DigitalOut chipSelect(D10);
 Serial pc(USBTX, USBRX); // tx, rx
-//DigitalOut LED(LED1);
-int USF,USR,USL,USB;
 int dataFromSlave;
 int valueToSendToSlave;
 int main() {
 
         int valueToSendToSlave = 20; // Starting value only, this increments
         spi.format(8,3);    // Setup:  bit data, high steady state clock, 2nd edge capture
-        spi.frequency(16000000); //1MHz
+        spi.frequency(16000000); //16MHz
 
         pc.printf("======================================================\r\n");
         pc.printf("Press any key to start...\r\n");
